@@ -7,4 +7,18 @@ window.addEventListener("DOMContentLoaded", () => {
   button.addEventListener("click", () => {
     alert("💣");
   });
+
+  const body = document.querySelector("body");
+
+  body.addEventListener('click', () => createFiveElements())
+
+  function createFiveElements(){
+    for (let i = 1; i <= 5; i++) {
+      const element = document.createElement("article")
+      element.classList.add("message")
+      element.textContent = `Message ${i}`    
+      body.appendChild(element);
+    }
+  }
+
 });
